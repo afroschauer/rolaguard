@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-default
+  namespace: default
+data:
+  ENVIRONMENT: DEV
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-front-backend
+  namespace: default
+data:
+  RECAPTCHA_SITEKEY: 6LdCN8oUAAAAALXcQ4xWjQikbyw_tFtR3CS4bNhg
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-aws
+  namespace: default
+data:
+  AWS_SECRET_ACCESS_KEY: move_to_secrets
+  AWS_ACCESS_KEY_ID: move_to_secrets
+  AWS_DEFAULT_REGION: us-west-2
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-postgres
+  namespace: default
+data:
+  DB_HOST: postgres
+  DB_NAME: rolaguard_local
+  DB_PORT: "5432"
+  DB_USERNAME: postgres
+  DB_PASSWORD: post_gres
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-rabbitmq
+  namespace: default
+data:
+  RABBITMQ_HOST: rabbitmq
+  RABBITMQ_PORT: "5672"
+  RABBITMQ_DEFAULT_USER: user
+  RABBITMQ_DEFAULT_PASS: user
+  RABBITMQ_QUEUE: data_collectors_test_events
+  RABBITMQ_EXCHANGE: data_collectors_events
+  RABBITMQ_POOL_SIZE: "8"
+  RABBITMQ_POOL_RECYCLE: "600"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-backend
+  namespace: default
+data:
+  JWT_SECRET_KEY: your_jwt_secret
+  SECRET: your_secret
+  MASTER_KEY: df_a-ZnsRjsvIkOOpRq8fVs0dp6kbfKrVLCjiaBotbc=
+  RECAPTCHA_SECRET_KEY: 6LdCN8oUAAAAABrVAViMfhniphD0j0co-AxHPgpR
+  SEND_EMAILS: "False"
+  ASSIGN_COLLECTOR_TO_USER_ENABLED: "False"
+  SEND_SMS: "False"
+  SMTP_HOST: "email-smtp.us-east-1.amazonaws.com"
+  SMTP_PORT: "587"
+  SMTP_USERNAME: "AKIA26BKKQ7JEABQBPFE"
+  SMTP_PASSWORD: "BM3A2xKp6jNDk+8DM+Jt9FkoKtlIVHmukgbmlaNAQ110"
+  SMTP_SENDER: "donotreply@rolaguard.com" 
+  SMTP_SENDER_NAME: "RoLaGuard Team"
+  SMTP_MAX_SEND_MAIL_ATTEMPTS: "5"
+  SECRET: "my secret key"
+  JWT_SECRET_KEY: "jwt-secret-string"
+  MASTER_KEY: "2N-xgcJODdDeuy1QCAFvzBejhQSWFPQo41WdLUw4IA0="
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-frontend
+  namespace: default
+data:
+  REACT_APP_API_HOST: http://localhost.rolaguard:30003/api/v1.0/
+  REACT_APP_WS_HOST: http://localhost.rolaguard:30003/
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-var-data-collectors
+  namespace: default
+data:
+  API_HOST: backend:5000
+  API_USER: user.orchestrator
+  API_PASSWORD: rolaguard_password

@@ -1,0 +1,21 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Argeniss-Software/rolaguard_backend
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Argeniss-Software/rolaguard_frontend
+[submodule "system-backoffice"]
+	path = system-backoffice
+	url = https://github.com/Argeniss-Software/rolaguard_system-backoffice
+[submodule "packet-writer"]
+	path = packet-writer
+	url = https://github.com/Argeniss-Software/rolaguard_packet-writer
+[submodule "data-collectors"]
+	path = data-collectors
+	url = https://github.com/Argeniss-Software/rolaguard_data-collectors
+[submodule "engine"]
+	path = engine
+	url = https://github.com/Argeniss-Software/rolaguard_engine
+[submodule "postgres"]
+	path = postgres
+	url = https://github.com/Argeniss-Software/rolaguard_postgres
